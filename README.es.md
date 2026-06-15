@@ -9,6 +9,42 @@ Detector de indicadores asociados al ataque de cadena de suministro de AUR
 - Repositorio: <https://github.com/l0rdmalware/atomic-lockfile-supply-chain-attack>
 - Proyecto de referencia: <https://github.com/lenucksi/aur-malware-check>
 
+## Instalación y uso
+
+Clona el repositorio y entra en su directorio:
+
+```bash
+git clone https://github.com/l0rdmalware/atomic-lockfile-supply-chain-attack.git
+cd atomic-lockfile-supply-chain-attack
+```
+
+Ejecuta el análisis predeterminado con Bash:
+
+```bash
+./check_supply-chain-attack.sh
+```
+
+El análisis predeterminado revisa los paquetes externos instalados y el
+historial de pacman. Para actualizar primero la lista de paquetes afectados y
+activar todas las comprobaciones opcionales:
+
+```bash
+./check_supply-chain-attack.sh --update
+./check_supply-chain-attack.sh --full
+```
+
+También puedes usar cualquiera de las otras implementaciones:
+
+```bash
+./check_supply-chain-attack.zsh --full
+./check_supply-chain-attack.fish --full
+./check_supply-chain-attack.py --full
+```
+
+Revisa el resultado final y el código de salida. No ejecutes los scripts con
+`sudo` salvo que necesites acceder a un log protegido específico. Inspecciona
+el código fuente antes de conceder privilegios elevados.
+
 ## Versiones
 
 Todas las versiones aceptan las mismas opciones y usan la lista

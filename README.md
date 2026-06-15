@@ -9,6 +9,42 @@ attack.
 - Repository: <https://github.com/l0rdmalware/atomic-lockfile-supply-chain-attack>
 - Reference project: <https://github.com/lenucksi/aur-malware-check>
 
+## Installation and Usage
+
+Clone the repository and enter its directory:
+
+```bash
+git clone https://github.com/l0rdmalware/atomic-lockfile-supply-chain-attack.git
+cd atomic-lockfile-supply-chain-attack
+```
+
+Run the default scan with Bash:
+
+```bash
+./check_supply-chain-attack.sh
+```
+
+The default scan checks currently installed foreign packages and pacman
+history. To update the affected package list first and enable every optional
+check:
+
+```bash
+./check_supply-chain-attack.sh --update
+./check_supply-chain-attack.sh --full
+```
+
+You can use any of the other implementations instead:
+
+```bash
+./check_supply-chain-attack.zsh --full
+./check_supply-chain-attack.fish --full
+./check_supply-chain-attack.py --full
+```
+
+Review the final result and exit code. Do not run the scripts with `sudo`
+unless access to a specific protected log requires it. Inspect the source
+before granting elevated privileges.
+
 ## Versions
 
 All versions accept the same options and use the
