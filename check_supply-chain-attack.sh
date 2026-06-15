@@ -12,7 +12,7 @@
 set -euo pipefail
 
 readonly SCRIPT_NAME="check_supply-chain-attack.sh"
-readonly SCRIPT_VERSION="1.1.1"
+readonly SCRIPT_VERSION="1.2.0"
 readonly PROJECT_NAME="atomic-lockfile-supply-chain-attack"
 readonly AUTHOR="l0rdmalware"
 readonly WEBSITE="https://l0rdmalware.cc"
