@@ -1,0 +1,64 @@
+# atomic-lockfile-supply-chain-attack
+
+[English](README.md) | [Español](README.es.md)
+
+Detector de indicadores asociados al ataque de cadena de suministro de AUR
+`atomic-lockfile`.
+
+- Autor: [l0rdmalware](https://l0rdmalware.cc)
+- Repositorio: <https://github.com/l0rdmalware/atomic-lockfile-supply-chain-attack>
+- Proyecto de referencia: <https://github.com/lenucksi/aur-malware-check>
+
+## Versiones
+
+Todas las versiones aceptan las mismas opciones y usan la lista
+`aur_infected_packages.md`.
+
+```bash
+# Bash
+./check_supply-chain-attack.sh --full
+
+# zsh
+./check_supply-chain-attack.zsh --full
+
+# fish
+./check_supply-chain-attack.fish --full
+
+# Python 3.9+
+./check_supply-chain-attack.py --full
+```
+
+Los lanzadores de zsh y fish usan la implementación Python para mantener el
+mismo comportamiento. La versión Bash es independiente.
+
+## Opciones principales
+
+```text
+--update             Actualiza la lista de paquetes afectados
+--list FILE          Usa otra lista Markdown
+--skip-logs          Omite el historial de pacman
+--check-systemd      Busca persistencia en unidades systemd
+--check-ebpf         Busca nombres conocidos de mapas eBPF
+--check-npm-cache    Revisa artefactos de npm
+--check-bun-cache    Revisa artefactos de bun
+--full               Activa todas las comprobaciones opcionales
+--all-time           Revisa todo el historial de pacman
+-v, --verbose        Muestra los archivos inspeccionados
+```
+
+## Requisitos
+
+- Arch Linux o un sistema con `pacman`.
+- Bash para la versión `.sh`.
+- Python 3.9 o superior para `.py`, `.zsh` y `.fish`.
+- zsh o fish para su lanzador correspondiente.
+- `zstdcat` para revisar logs de pacman comprimidos con Zstandard.
+
+## Códigos de salida
+
+- `0`: no se encontraron indicadores.
+- `1`: el análisis quedó incompleto o ocurrió un error.
+- `2`: se encontraron uno o más indicadores.
+
+Una coincidencia es un indicador para investigación, no una confirmación
+automática de compromiso.

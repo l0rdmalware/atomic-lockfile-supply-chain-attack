@@ -1,18 +1,18 @@
 # atomic-lockfile-supply-chain-attack
 
-[Español](README.md) | [English](README.en.md)
+[English](README.md) | [Español](README.es.md)
 
-Detector de indicadores asociados al ataque de cadena de suministro de AUR
-`atomic-lockfile`.
+Detector for indicators associated with the `atomic-lockfile` AUR supply-chain
+attack.
 
-- Autor: [l0rdmalware](https://l0rdmalware.cc)
-- Repositorio: <https://github.com/l0rdmalware/atomic-lockfile-supply-chain-attack>
-- Proyecto de referencia: <https://github.com/lenucksi/aur-malware-check>
+- Author: [l0rdmalware](https://l0rdmalware.cc)
+- Repository: <https://github.com/l0rdmalware/atomic-lockfile-supply-chain-attack>
+- Reference project: <https://github.com/lenucksi/aur-malware-check>
 
-## Versiones
+## Versions
 
-Todas las versiones aceptan las mismas opciones y usan la lista
-`aur_infected_packages.md`.
+All versions accept the same options and use the
+`aur_infected_packages.md` list.
 
 ```bash
 # Bash
@@ -28,37 +28,37 @@ Todas las versiones aceptan las mismas opciones y usan la lista
 ./check_supply-chain-attack.py --full
 ```
 
-Los lanzadores de zsh y fish usan la implementación Python para mantener el
-mismo comportamiento. La versión Bash es independiente.
+The zsh and fish launchers use the Python implementation to maintain identical
+behavior. The Bash version is independent.
 
-## Opciones principales
+## Main Options
 
 ```text
---update             Actualiza la lista de paquetes afectados
---list FILE          Usa otra lista Markdown
---skip-logs          Omite el historial de pacman
---check-systemd      Busca persistencia en unidades systemd
---check-ebpf         Busca nombres conocidos de mapas eBPF
---check-npm-cache    Revisa artefactos de npm
---check-bun-cache    Revisa artefactos de bun
---full               Activa todas las comprobaciones opcionales
---all-time           Revisa todo el historial de pacman
--v, --verbose        Muestra los archivos inspeccionados
+--update             Update the affected package list
+--list FILE          Use a different Markdown list
+--skip-logs          Skip the pacman history scan
+--check-systemd      Check systemd units for persistence
+--check-ebpf         Check for known eBPF map names
+--check-npm-cache    Check npm artifacts
+--check-bun-cache    Check bun artifacts
+--full               Enable all optional checks
+--all-time           Scan the complete pacman history
+-v, --verbose        Show the files being inspected
 ```
 
-## Requisitos
+## Requirements
 
-- Arch Linux o un sistema con `pacman`.
-- Bash para la versión `.sh`.
-- Python 3.9 o superior para `.py`, `.zsh` y `.fish`.
-- zsh o fish para su lanzador correspondiente.
-- `zstdcat` para revisar logs de pacman comprimidos con Zstandard.
+- Arch Linux or a system with `pacman`.
+- Bash for the `.sh` version.
+- Python 3.9 or newer for the `.py`, `.zsh`, and `.fish` versions.
+- zsh or fish for the corresponding launcher.
+- `zstdcat` to inspect pacman logs compressed with Zstandard.
 
-## Códigos de salida
+## Exit Codes
 
-- `0`: no se encontraron indicadores.
-- `1`: el análisis quedó incompleto o ocurrió un error.
-- `2`: se encontraron uno o más indicadores.
+- `0`: no indicators were found.
+- `1`: the scan was incomplete or an error occurred.
+- `2`: one or more indicators were found.
 
-Una coincidencia es un indicador para investigación, no una confirmación
-automática de compromiso.
+A match is an indicator requiring investigation, not automatic confirmation
+of compromise.
