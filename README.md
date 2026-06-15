@@ -1,5 +1,7 @@
 # atomic-lockfile-supply-chain-attack
 
+[Español](README.md) | [English](README.en.md)
+
 Detector de indicadores asociados al ataque de cadena de suministro de AUR
 `atomic-lockfile`.
 
