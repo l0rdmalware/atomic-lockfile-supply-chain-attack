@@ -20,7 +20,7 @@ import urllib.request
 from pathlib import Path
 from typing import Iterable, Iterator, Sequence
 
-VERSION = "1.2.0"
+VERSION = "1.2.1"
 PROJECT_NAME = "atomic-lockfile-supply-chain-attack"
 AUTHOR = "l0rdmalware"
 WEBSITE = "https://l0rdmalware.cc"
@@ -49,11 +49,11 @@ LOG_RE = re.compile(
     r"(?P<package>\S+)"
 )
 
-BANNER = r""" _  ___          _                 _                          ___ ___
-| |/ _ \ _ __ __| |_ __ ___   __ _| |_      ____ _ _ __ ___ / __/ __|
-| | | | | '__/ _` | '_ ` _ \ / _` | \ \ /\ / / _` | '__/ _ \ (_| (__
-|_|\___/|_|  \__,_|_| |_| |_|\__,_|_|\ V  V /\__,_|_|  \___/\___\___|
-                                   \_/\_/"""
+BANNER = r""" _  ___          _                 _
+| |/ _ \ _ __ __| |_ __ ___   __ _| |_      ____ _ _ __ ___
+| | | | | '__/ _` | '_ ` _ \ / _` | \ \ /\ / / _` | '__/ _ \
+| | |_| | | | (_| | | | | | | (_| | |\ V  V / (_| | | |  __/
+|_|\___/|_|  \__,_|_| |_| |_|\__,_|_| \_/\_/ \__,_|_|  \___|"""
 
 
 class Scanner:

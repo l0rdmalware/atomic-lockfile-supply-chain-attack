@@ -12,7 +12,7 @@
 set -euo pipefail
 
 readonly SCRIPT_NAME="check_supply-chain-attack.sh"
-readonly SCRIPT_VERSION="1.2.0"
+readonly SCRIPT_VERSION="1.2.1"
 readonly PROJECT_NAME="atomic-lockfile-supply-chain-attack"
 readonly AUTHOR="l0rdmalware"
 readonly WEBSITE="https://l0rdmalware.cc"
@@ -43,11 +43,11 @@ nextfile-js"
 
 banner() {
     cat <<'EOF'
- _  ___          _                 _                          ___ ___
-| |/ _ \ _ __ __| |_ __ ___   __ _| |_      ____ _ _ __ ___ / __/ __|
-| | | | | '__/ _` | '_ ` _ \ / _` | \ \ /\ / / _` | '__/ _ \ (_| (__
-|_|\___/|_|  \__,_|_| |_| |_|\__,_|_|\ V  V /\__,_|_|  \___/\___\___|
-                                   \_/\_/
+ _  ___          _                 _
+| |/ _ \ _ __ __| |_ __ ___   __ _| |_      ____ _ _ __ ___
+| | | | | '__/ _` | '_ ` _ \ / _` | \ \ /\ / / _` | '__/ _ \
+| | |_| | | | (_| | | | | | | (_| | |\ V  V / (_| | | |  __/
+|_|\___/|_|  \__,_|_| |_| |_|\__,_|_| \_/\_/ \__,_|_|  \___|
 EOF
     printf '  Project:    %s v%s\n' "$PROJECT_NAME" "$SCRIPT_VERSION"
     printf '  Author:     %s (%s)\n' "$AUTHOR" "$WEBSITE"
