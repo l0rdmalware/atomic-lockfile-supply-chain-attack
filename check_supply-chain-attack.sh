@@ -1,12 +1,23 @@
 #!/usr/bin/env bash
 
+# Project: atomic-lockfile-supply-chain-attack
+# Author: l0rdmalware
+# Website: https://l0rdmalware.cc
+# Repository: https://github.com/l0rdmalware/atomic-lockfile-supply-chain-attack
+#
+# Detection features were adapted with reference to the original community
+# project maintained at:
+# https://github.com/lenucksi/aur-malware-check
+
 set -euo pipefail
 
 readonly SCRIPT_NAME="check_supply-chain-attack.sh"
-readonly SCRIPT_VERSION="1.1.0"
+readonly SCRIPT_VERSION="1.1.1"
+readonly PROJECT_NAME="atomic-lockfile-supply-chain-attack"
 readonly AUTHOR="l0rdmalware"
 readonly WEBSITE="https://l0rdmalware.cc"
 readonly REPOSITORY="https://github.com/l0rdmalware/atomic-lockfile-supply-chain-attack"
+readonly SOURCE_REPOSITORY="https://github.com/lenucksi/aur-malware-check"
 readonly LIST_URL="https://md.archlinux.org/s/SxbqukK6IA/download"
 readonly CAMPAIGN_START="2026-06-09"
 readonly CAMPAIGN_END="2026-06-12"
@@ -38,8 +49,10 @@ banner() {
 |_|\___/|_|  \__,_|_| |_| |_|\__,_|_|\ V  V /\__,_|_|  \___/\___\___|
                                    \_/\_/
 EOF
-    printf '  %s | v%s\n' "$WEBSITE" "$SCRIPT_VERSION"
-    printf '  Repository: %s\n\n' "$REPOSITORY"
+    printf '  Project:    %s v%s\n' "$PROJECT_NAME" "$SCRIPT_VERSION"
+    printf '  Author:     %s (%s)\n' "$AUTHOR" "$WEBSITE"
+    printf '  Repository: %s\n' "$REPOSITORY"
+    printf '  Reference:  %s\n\n' "$SOURCE_REPOSITORY"
 }
 
 usage() {
@@ -48,6 +61,9 @@ Usage: $SCRIPT_NAME [OPTIONS]
 
 Detects indicators associated with the June 2026 atomic-lockfile AUR
 supply-chain attack.
+
+Project:    $REPOSITORY
+Reference:  $SOURCE_REPOSITORY
 
   --update             Refresh the affected AUR package list
   --list FILE          Use a different Markdown package list
@@ -146,7 +162,9 @@ while (($#)); do
             shift
             ;;
         --version)
-            printf '%s %s\n%s\n' "$SCRIPT_NAME" "$SCRIPT_VERSION" "$REPOSITORY"
+            printf '%s %s\n' "$SCRIPT_NAME" "$SCRIPT_VERSION"
+            printf 'Project: %s\n' "$REPOSITORY"
+            printf 'Reference: %s\n' "$SOURCE_REPOSITORY"
             exit 0
             ;;
         -h|--help)
