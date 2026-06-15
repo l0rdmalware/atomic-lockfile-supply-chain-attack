@@ -62,3 +62,13 @@ behavior. The Bash version is independent.
 
 A match is an indicator requiring investigation, not automatic confirmation
 of compromise.
+
+## Incident Coverage
+
+- [Aviatrix Threat Research: Arch Linux AUR Compromise 2026](https://aviatrix.ai/threat-research-center/arch-linux-aur-compromise-2026/)
+- [The Hacker News: Over 400 Arch Linux AUR Packages](https://thehackernews.com/2026/06/over-400-arch-linux-aur-packages.html)
+- [Hacker News community discussion](https://news.ycombinator.com/item?id=48500447)
+
+These links provide technical analysis, news coverage, and community discussion
+about the incident. Verify remediation guidance against current official Arch
+Linux advisories.

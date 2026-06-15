@@ -62,3 +62,13 @@ mismo comportamiento. La versión Bash es independiente.
 
 Una coincidencia es un indicador para investigación, no una confirmación
 automática de compromiso.
+
+## Cobertura del incidente
+
+- [Aviatrix Threat Research: Arch Linux AUR Compromise 2026](https://aviatrix.ai/threat-research-center/arch-linux-aur-compromise-2026/)
+- [The Hacker News: Over 400 Arch Linux AUR Packages](https://thehackernews.com/2026/06/over-400-arch-linux-aur-packages.html)
+- [Discusión de la comunidad en Hacker News](https://news.ycombinator.com/item?id=48500447)
+
+Estos enlaces proporcionan análisis técnico, cobertura periodística y discusión
+comunitaria sobre el incidente. Verifica las medidas de mitigación con los
+avisos oficiales vigentes de Arch Linux.
